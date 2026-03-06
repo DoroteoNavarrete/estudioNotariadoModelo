@@ -356,15 +356,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .hero__image img {
   width: 100%;
-  max-width: 520px;
   height: auto;
+  max-height: clamp(400px, 60vh, 640px);
   object-fit: contain;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  object-position: center;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -477,8 +477,8 @@ button {
 }
 
 .carousel__slide {
-  min-width: 100%;
-  flex-shrink: 0;
+  flex: 0 0 100%;
+  width: 100%;
   overflow: hidden;
   background-color: #000;
 }
@@ -1000,22 +1000,30 @@ button {
     top: var(--navbar-h);
     left: 0;
     right: 0;
-    z-index: 999;
     background-color: var(--white);
     box-shadow: var(--shadow-md);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: 0.5rem 1rem 1rem;
-    transform: translateY(-110%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                visibility 0s linear 0.3s;
     pointer-events: none;
     margin-left: 0;
   }
 
   .navbar__nav.open {
+    visibility: visible;
+    opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                visibility 0s linear 0s;
   }
 
   .navbar__nav a {
