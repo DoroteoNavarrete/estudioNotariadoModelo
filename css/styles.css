@@ -1042,35 +1042,38 @@ button {
     color: var(--primary) !important;
   }
 
-  /* ── Hero mobile — layout vertical único ─────────────────── */
+  /* ── Hero mobile — pantalla 1: contenido / pantalla 2: imagen ── */
   .hero__inner {
     grid-template-columns: 1fr;
     min-height: unset;
-    padding-block: 2.5rem 0;
-    gap: 2rem;
+    padding-block: 0;
+    gap: 0;
   }
 
+  /* Pantalla 1: solo el texto y CTA, llena el viewport */
   .hero__content {
     order: 0;
     align-items: center;
     text-align: center;
-    min-height: unset;
+    min-height: calc(100svh - var(--navbar-h));
     justify-content: center;
-    padding-block: 0;
+    padding-block: 3rem;
+    gap: 2rem;
   }
 
+  /* Pantalla 2: la imagen, al hacer scroll */
   .hero__image {
     order: 1;
     min-height: unset;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    padding-block: 1.5rem 2.5rem;
+    padding-block: 2rem 3.5rem;
   }
 
   .hero__image img {
-    max-width: 78%;
+    max-width: 82%;
     height: auto;
-    max-height: 300px;
+    max-height: 360px;
     object-fit: contain;
     border-radius: 0;
   }
