@@ -1042,37 +1042,37 @@ button {
     color: var(--primary) !important;
   }
 
-  /* ── FIX 2: Hero — dos pantallazos en mobile ─────────────── */
+  /* ── Hero mobile — layout vertical único ─────────────────── */
   .hero__inner {
     grid-template-columns: 1fr;
     min-height: unset;
-    padding-block: 0;
-    gap: 0;
+    padding-block: 2.5rem 0;
+    gap: 2rem;
   }
 
-  /* Primer pantallazo: texto + CTA */
   .hero__content {
     order: 0;
     align-items: center;
     text-align: center;
-    min-height: 100svh;
+    min-height: unset;
     justify-content: center;
-    padding-block: 2.5rem;
+    padding-block: 0;
   }
 
-  /* Segundo pantallazo: imagen */
   .hero__image {
     order: 1;
-    min-height: 100svh;
-    align-items: center;
+    min-height: unset;
+    align-items: flex-end;
     justify-content: center;
-    padding-block: 2rem;
+    padding-block: 1.5rem 2.5rem;
   }
 
   .hero__image img {
-    max-width: 100%;
+    max-width: 78%;
     height: auto;
-    border-radius: var(--radius-md);
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 0;
   }
 
   .hero__subtitle {
